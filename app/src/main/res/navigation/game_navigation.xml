@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.advanced160919005.MainFragment"
+        android:label="Main Screen"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/actionGameFragment"
+            app:destination="@id/gameFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.advanced160919005.GameFragment"
+        android:label="Game Screen"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/actionMainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="playerName"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionResult"
+            app:destination="@id/resultFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment3"
+        android:name="com.example.advanced160919005.ResultFragment"
+        android:label="activity_result_fragment"
+        tools:layout="@layout/activity_result_fragment" >
+        <action
+            android:id="@+id/actionResultToMain"
+            app:destination="@id/mainFragment" />
+        <argument android:name="playerPoints"
+            app:argType="string" />
+    </fragment>
+</navigation>

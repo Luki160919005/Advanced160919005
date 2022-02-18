@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Advanced160919005">
         <activity
+            android:name=".ResultFragment"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
